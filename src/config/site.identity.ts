@@ -4,7 +4,7 @@ export const siteIdentity = {
   tagline: process.env.NEXT_PUBLIC_SITE_TAGLINE || 'Independent media updates',
   description:
     process.env.NEXT_PUBLIC_SITE_DESCRIPTION ||
-    'A simple newsroom-style publication for announcements, coverage, and media updates on Global Pressy.',
+    'Independent media distribution: field updates, press lines, and reader-first coverage from Global Pressy.',
   domain: process.env.NEXT_PUBLIC_SITE_DOMAIN || 'globalpressy.com',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://globalpressy.com',
   ogImage: process.env.NEXT_PUBLIC_SITE_OG_IMAGE || '/og-default.png',

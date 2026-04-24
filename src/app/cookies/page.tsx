@@ -1,29 +1,39 @@
 ﻿import { PageShell } from '@/components/shared/page-shell'
-import { Card, CardContent } from '@/components/ui/card'
 
 const sections = [
-  { title: 'Essential Cookies', body: 'Required for authentication and core features.' },
-  { title: 'Analytics Cookies', body: 'Help us understand how the platform is used.' },
-  { title: 'Preference Cookies', body: 'Remember your settings and saved filters.' },
+  {
+    title: 'Strictly necessary',
+    body: 'Session and security cookies keep you signed in where authentication is used, protect forms, and remember essential preferences such as light interface mode.',
+  },
+  {
+    title: 'Performance & analytics',
+    body: 'We may use limited analytics to see aggregate traffic, referrers, and error rates. These are configured to avoid unnecessary cross-site tracking and to support reliability work.',
+  },
+  {
+    title: 'Your control',
+    body: 'You can clear cookies in your browser at any time. Some features may not work until necessary cookies are allowed again. We do not use cookies to show third-party ad profiles on this template.',
+  },
 ]
 
 export default function CookiesPage() {
   return (
     <PageShell
-      title="Cookie Policy"
-      description="Details about the cookies we use."
+      eyebrow="Legal"
+      title="Cookie policy"
+      description="What cookies and similar storage may be used when you use this site, and what you can do about it."
     >
-      <Card className="border-border bg-card">
-        <CardContent className="p-6 space-y-4">
-          <p className="text-xs text-muted-foreground">Last updated: March 16, 2026</p>
-          {sections.map((section) => (
-            <div key={section.title} className="rounded-lg border border-border bg-secondary/40 p-4">
-              <h3 className="text-sm font-semibold text-foreground">{section.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{section.body}</p>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted-foreground">Last updated · April 2026</p>
+      <div className="mt-8 space-y-10">
+        {sections.map((section) => (
+          <div
+            key={section.title}
+            className="border-b border-border/80 pb-10 last:border-0 last:pb-0"
+          >
+            <h2 className="font-display text-xl font-medium tracking-[-0.02em] text-foreground">{section.title}</h2>
+            <p className="mt-3 max-w-3xl text-sm leading-[1.85] text-muted-foreground">{section.body}</p>
+          </div>
+        ))}
+      </div>
     </PageShell>
   )
 }
