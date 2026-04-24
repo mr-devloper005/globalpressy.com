@@ -6,41 +6,57 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { mockFaqs } from '@/data/mock-data'
 
 const topics = [
-  { title: 'Getting Started', description: 'Create your account and publish your first post.' },
-  { title: 'Bookmarks & Collections', description: 'Save links, organize folders, and share collections.' },
-  { title: 'Listings & Ads', description: 'Manage your business listings and classifieds.' },
+  {
+    title: 'Publishing a line',
+    description: 'How items move from draft to the public wire, and what metadata travels with each post.',
+  },
+  {
+    title: 'Search & archive',
+    description: 'Using lookup to jump across tasks, and how results stay tied to the same feed rules as the home page.',
+  },
+  {
+    title: 'Account & desk access',
+    description: 'Sign-in, roles, and where to go when you need a correction or retraction filed.',
+  },
 ]
 
 export default function HelpPage() {
   return (
     <PageShell
-      title="Help Center"
-      description="Find answers, guides, and best practices."
+      eyebrow="Reader tools"
+      title="Help & reference"
+      description="Short guides for scanning the archive, understanding the wire, and reaching the editorial desk when something breaks."
       actions={
-        <Button asChild>
-          <Link href="/contact">Contact Support</Link>
+        <Button
+          asChild
+          className="border-0 bg-[#c9a35a] px-6 text-[#1a120c] hover:bg-[#b8934e]"
+        >
+          <Link href="/contact">Write the desk</Link>
         </Button>
       }
     >
-      <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-        <div className="grid gap-6 md:grid-cols-2">
+      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-5 sm:grid-cols-2">
           {topics.map((topic) => (
-            <Card key={topic.title} className="border-border bg-card transition-transform hover:-translate-y-1">
-              <CardContent className="p-6">
-                <h2 className="text-lg font-semibold text-foreground">{topic.title}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{topic.description}</p>
+            <Card
+              key={topic.title}
+              className="border-[#2a1f16]/12 bg-[#fffcf7] shadow-[0_6px_24px_rgba(20,10,5,0.05)] transition-transform hover:-translate-y-0.5"
+            >
+              <CardContent className="p-5 sm:p-6">
+                <h2 className="font-display text-lg font-medium text-foreground">{topic.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{topic.description}</p>
               </CardContent>
             </Card>
           ))}
         </div>
-        <Card className="border-border bg-card">
+        <Card className="border-[#2a1f16]/12 bg-card/90">
           <CardContent className="p-6">
-            <h3 className="text-lg font-semibold text-foreground">FAQ</h3>
+            <h3 className="font-display text-lg font-medium text-foreground">Common questions</h3>
             <Accordion type="single" collapsible className="mt-4">
               {mockFaqs.map((faq) => (
-                <AccordionItem key={faq.id} value={faq.id}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                <AccordionItem key={faq.id} value={faq.id} className="border-border/60">
+                  <AccordionTrigger className="text-left text-sm font-medium">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-sm text-muted-foreground">{faq.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>

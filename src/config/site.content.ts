@@ -2,80 +2,82 @@ import type { TaskKey } from '@/lib/site-config'
 
 export const siteContent = {
   navbar: {
-    tagline: 'Independent news desk',
+    tagline: 'Press desk & wire copy',
   },
   footer: {
-    tagline: 'Simple publishing for press-style updates',
+    tagline: 'Distribution and reader-facing updates for Global Pressy without extra chrome.',
   },
   hero: {
-    badge: 'Latest updates',
-    title: ['Clear publishing, simple reading, no extra noise.'],
+    badge: 'Current line',
+    title: ['Field notes, media lines, and reader-first updates.'],
     description:
-      'A minimal article-style publishing template built for regular updates, announcements, and media distribution posts.',
+      'Global Pressy is an independent distribution surface for press-style posts: clear layout, quick scanning, and long-form room when a story needs it.',
     primaryCta: {
-      label: 'Browse latest posts',
+      label: 'Open the latest',
       href: '/updates',
     },
     secondaryCta: {
-      label: 'Contact us',
+      label: 'Reach the desk',
       href: '/contact',
     },
-    searchPlaceholder: 'Search posts',
+    searchPlaceholder: 'Search the archive',
     focusLabel: 'Latest',
-    featureCardBadge: 'editor note',
-    featureCardTitle: 'Recent updates appear directly on the homepage.',
+    featureCardBadge: 'desk note',
+    featureCardTitle: 'New posts sit on the front with straight hierarchy.',
     featureCardDescription:
-      'The homepage works as a clean front page so new posts stay visible without decorative sections getting in the way.',
+      'The home page is built like a feature spread: lead item, index list, and a calmer second band for longer synopses.',
   },
   home: {
     metadata: {
-      title: 'Latest updates and newsroom posts',
+      title: 'Global Pressy — media distribution and updates',
       description:
-        'Read the latest updates, announcements, and stories through a simple archive-first publishing experience.',
-      openGraphTitle: 'Latest updates and newsroom posts',
-      openGraphDescription:
-        'A simple publishing template for updates, announcements, and readable article pages.',
-      keywords: ['newsroom posts', 'latest updates', 'announcements', 'press articles'],
+        'Newsroom-style updates, announcements, and long-form items from Global Pressy in a single, readable archive.',
+      openGraphTitle: 'Global Pressy — media distribution and updates',
+      openGraphDescription: 'Reader-first updates and press-style posts in a clear archive.',
+      keywords: [
+        'Global Pressy',
+        'press updates',
+        'media distribution',
+        'editorial',
+        'announcements',
+      ],
     },
-    introBadge: 'About',
-    introTitle: 'A quiet publishing template made for regular updates.',
+    introBadge: 'Scope',
+    introTitle: 'Built for fast scanning and unhurried reading.',
     introParagraphs: [
-      'This template is designed for sites that publish straightforward updates and want the homepage to behave like a clean front page rather than a product landing page.',
-      'Posts are visible immediately, archives stay easy to scan, and the reading page keeps the focus on the article itself.',
-      'The interface is intentionally simple so the site feels usable, familiar, and fast to update.',
+      'The site keeps one primary stream for wire-style items so visitors always know where the newest material lives.',
+      'List pages use an index rhythm; story pages use a calmer feature layout with room for bylines and long copy.',
     ],
-    sideBadge: 'What it prioritizes',
+    sideBadge: 'Emphasis',
     sidePoints: [
-      'Recent posts directly on the homepage.',
-      'Simple archive layout with sidebar search and recent items.',
-      'Readable article pages without comments or extra modules.',
-      'A publishing-first structure that stays easy to maintain.',
+      'A single lead block on the home page with no dependency on stock hero imagery.',
+      'Archive and detail views that feel related but are not the same template repeated.',
+      'Search and contact stay one click away in the masthead and footer.',
     ],
     primaryLink: {
       label: 'Open archive',
       href: '/updates',
     },
     secondaryLink: {
-      label: 'Contact desk',
+      label: 'Editorial contact',
       href: '/contact',
     },
   },
   cta: {
-    badge: 'Get in touch',
-    title: 'Use this template when publishing regular updates matters more than visual effects.',
-    description:
-      'A straightforward layout for announcements, media coverage, partner updates, and newsroom-style content.',
+    badge: 'Editorial',
+    title: 'When you need a calmer place to post than a product landing page.',
+    description: 'Use the updates stream for partner lines, field notes, and coverage-style posts.',
     primaryCta: {
-      label: 'Contact us',
+      label: 'Contact the desk',
       href: '/contact',
     },
     secondaryCta: {
-      label: 'View archive',
+      label: 'View updates',
       href: '/updates',
     },
   },
-  taskSectionHeading: 'Latest posts',
-  taskSectionDescriptionSuffix: 'Read the newest published updates.',
+  taskSectionHeading: 'Running feed',
+  taskSectionDescriptionSuffix: 'Wire copy and field updates',
 } as const
 
 export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'social'>, { title: string; description: string }> = {
@@ -108,8 +110,8 @@ export const taskPageMetadata: Record<Exclude<TaskKey, 'comment' | 'org' | 'soci
     description: 'Open PDFs and downloadable files.',
   },
   mediaDistribution: {
-    title: 'Latest updates',
-    description: 'Read the latest published updates and announcements.',
+    title: 'Updates',
+    description: 'Read the latest published lines and field posts.',
   },
 }
 
@@ -118,20 +120,20 @@ export const taskIntroCopy: Record<
   { title: string; paragraphs: string[]; links: { label: string; href: string }[] }
 > = {
   listing: { title: 'Listings', paragraphs: ['Directory entries and service pages.'], links: [{ label: 'Home', href: '/' }] },
-  article: { title: 'Articles', paragraphs: ['General long-form article feed.'], links: [{ label: 'Home', href: '/' }] },
+  article: { title: 'Articles', paragraphs: ['Long-form article feed.'], links: [{ label: 'Home', href: '/' }] },
   classified: { title: 'Classifieds', paragraphs: ['Short-form posts and notices.'], links: [{ label: 'Home', href: '/' }] },
   image: { title: 'Images', paragraphs: ['Image-first posts and galleries.'], links: [{ label: 'Home', href: '/' }] },
-  profile: { title: 'Profiles', paragraphs: ['Profile pages and identity surfaces.'], links: [{ label: 'Home', href: '/' }] },
+  profile: { title: 'Profiles', paragraphs: ['Profile pages and public identities.'], links: [{ label: 'Home', href: '/' }] },
   sbm: { title: 'Bookmarks', paragraphs: ['Curated saved links and references.'], links: [{ label: 'Home', href: '/' }] },
   pdf: { title: 'Resources', paragraphs: ['Downloadable files and documents.'], links: [{ label: 'Home', href: '/' }] },
   social: { title: 'Social', paragraphs: ['Short updates and activity.'], links: [{ label: 'Home', href: '/' }] },
   comment: { title: 'Comments', paragraphs: ['Commentary and response posts.'], links: [{ label: 'Home', href: '/' }] },
   org: { title: 'Organizations', paragraphs: ['Organization pages and entities.'], links: [{ label: 'Home', href: '/' }] },
   mediaDistribution: {
-    title: 'Latest updates',
+    title: 'Updates',
     paragraphs: [
-      'This archive is designed for straightforward publishing: regular updates, announcements, and media-style posts presented in a clean reading format.',
-      'The layout stays simple so visitors can scan headlines quickly, open stories easily, and move through the archive without distraction.',
+      'This index lists every item in the distribution stream in reading order, with a compact rail for search and recents.',
+      'Open any headline for the full layout, byline, and long-form body when it is available.',
     ],
     links: [
       { label: 'Home', href: '/' },
