@@ -22,7 +22,11 @@ const nextConfig = {
     root: __dirname,
   },
   async redirects() {
-    return [{ source: "/about", destination: "/", permanent: true }]
+    return [
+      { source: "/about", destination: "/", permanent: true },
+      { source: "/users", destination: "/user", permanent: true },
+      { source: "/users/:slug*", destination: "/user/:slug*", permanent: true },
+    ]
   },
   async headers() {
     return [
@@ -50,16 +54,6 @@ const nextConfig = {
               ].join("; "),
           },
         ],
-      },
-      {
-        source: '/users',
-        destination: '/user',
-        permanent: true,
-      },
-      {
-        source: '/users/:slug*',
-        destination: '/user/:slug*',
-        permanent: true,
       },
     ];
   },
